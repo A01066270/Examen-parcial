@@ -1,0 +1,141 @@
+html{
+    background-color:lightslategrey;
+}
+
+body {
+    max-width: 1000px;
+    width: (100% - 40px);
+    margin: 4 auto;
+    background-color: white;
+    padding: 0 20px 20px 20px;
+    border: 2px solid lightgray;
+}
+
+table{
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.title{
+    font-family: 'Staatliches', cursive;
+    font-size: 25px;
+}
+
+.main-title{
+   font-family: 'Maven Pro', sans-serif;
+    font-size: 35px;
+    
+}
+
+.topchart{
+    color: darkgray;
+}
+
+.arialabel {
+    color: darkgrey;
+    font-family: 'Noto Sans JP', sans-serif;
+    
+}
+
+.container {
+    font-family: 'Roboto', sans-serif;
+    padding: 0 20px 20px 20px;
+    border: 1px solid black;
+}
+
+.resultados table {
+    width: 100%;
+    padding 15px;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+.topchart {
+    font-style: oblique;
+}
+
+footer
+{
+   max-width: 1000px;
+    width: (100% - 40px);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}   
+.text-center{
+    text-align: center;
+    margin: auto;
+    
+}
+
+a {
+    font-family: 'Noto Sans JP', sans-serif;
+    text-decoration: none;
+}
+
+.arialabel a:link{
+    color: black;
+}
+
+.arialablel a:visited{
+    color: darkred;
+}
+
+.arialabel a:hover{
+     color: red;
+    font-size: 20px;
+}
+
+submit:hover{
+    font-size: 2rem;
+}
+
+.grid-2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.grid-4{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+}
+
+label{
+    color: lightgray;
+    font-size: 15px;
+}
+
+.creditos {
+    color:lightsteelblue;
+    text-align: right;
+}
+
+.navtab {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+}
+
+/*navbar settings*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+    width:auto;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
