@@ -19,10 +19,10 @@ function desconectar($conexion_bd) {
 }
 
 
-function insertar_registro($nombre,$tabla){
+function insertar_zombie($nombre){
     $conexion_bd = conectar();
     $id = rand(20000,49999);
-    $insertarRegistro = "INSERT INTO ".$tabla." (idZombie, Nombre) VALUES (".$id.", ".$nombre.")";
+    $insertarRegistro = "INSERT INTO `Zombie` (idZombie, Nombre) VALUES (".$id.", '".$nombre."')";
     var_dump($insertarRegistro);
     $ejecutarInsertar = mysqli_query($conexion_bd,$insertarRegistro);
     //Deteccion de errores
@@ -57,7 +57,7 @@ function insertar_actualizacion($idZombie,$idEstado){
 
 function consultar_idZombie ($nombre, $tabla){
     $conexion_bd = conectar();
-    $consulta = "SELECT idZombie FORM ".$tabla." WHERE nombre LIKE '%".$nombre."'";
+    $consulta = "SELECT idZombie FROM Zombie WHERE Nombre LIKE '%".$nombre."'";
     $ejecutarConsulta = mysqli_query($conexion_bd, $consulta);
     $verRegistros = mysqli_num_rows($ejecutarConsulta);
     $registro = mysqli_fetch_array($ejecutarConsulta);
@@ -67,7 +67,7 @@ function consultar_idZombie ($nombre, $tabla){
 
 function consultar_idEstado ($nombre, $tabla){
     $conexion_bd = conectar();
-    $consulta = "SELECT idEstado FORM ".$tabla." WHERE nombre LIKE '%".$nombre."'";
+    $consulta = "SELECT idEstado FROM Estado WHERE Nombre LIKE '%".$nombre."%'";
     $ejecutarConsulta = mysqli_query($conexion_bd, $consulta);
     $verRegistros = mysqli_num_rows($ejecutarConsulta);
     $registro = mysqli_fetch_array($ejecutarConsulta);
@@ -77,10 +77,9 @@ function consultar_idEstado ($nombre, $tabla){
 }
 
 function registro_bd($zombie,$estado){
-    insertar_registro($zombie, 'zombie');
-    insertar_registro($estado, 'estado');
-    $z = consultar_idZombie($zombie, 'zombie');
-    $e = consultar_idEstado($estado, 'estado');
+    insertar_zombier($zombie);
+    $z = consultar_idZombie($zombie, "Zombie");
+    $e = consultar_idEstado($estado, "Estado");
     
     insertar_actualizacion($z,$e);
 }

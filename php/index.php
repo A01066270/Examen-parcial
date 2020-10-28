@@ -2,7 +2,7 @@
 require("conexion_bd.php");
 
 
-//session_start();
+session_start();
 
 
 include("../_header.html");

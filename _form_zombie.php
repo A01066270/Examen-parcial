@@ -8,22 +8,25 @@
             <input type="text" class="formulario1" name="nombre" placeholder="Nombre Apellido(s)">
             <br>
             <label class="label">Estado</label><br>
-            <div class="custom-select" style="width:200px;">
-  <select>
-    <option value="0">Selecciona un estado:</option>
-    <option value="1">Infeccion</option>
-    <option value="2">Desorientacion</option>
-    <option value="3">Violencia</option>
-    <option value="4">Desmayo</option>
-    <option value="5">Transformacion</option>
-  </select>
-</div>
+        <div class="custom-select" style="width:200px;" name="estado">
+            <select>
+            <option value="0">Selecciona un estado:</option>
+            <option value="Infeccion">Infeccion</option>
+            <option value="Desorientacion">Desorientacion</option>
+            <option value="Violencia">Violencia</option>
+            <option value="Desmayo">Desmayo</option>
+            <option value="Transformacion">Transformacion</option>
+            </select>
+        </div>
             <br>
             <br><br>
-            <input type="submit" class ="submit" value="Ingresar" >
+            <input type="submit" name="submit" value="Ingresar" >
          </div>
             <?
-             if(isset($_POST['submit'])){$nombre=$_POST["nombre"];insertar_registro($nombre,'zombie');}
+             if(isset($_POST['submit'])){
+                 $nombre=$_POST["nombre"];
+                 $estado=$_POST("estado");
+                registro_bd($nombre, $estado);}
                                         
             ?>
     </form>   
@@ -74,7 +77,7 @@
     </tr>
     
     <tr>
-        <td></td>
+        <td>Total</td>
         <td>Infeccion</td>
         <td>Desorientacion</td>
         <td>Violencia</td>
