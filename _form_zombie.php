@@ -21,7 +21,7 @@
     </form>   
     </div>
     <div class="resultados">
-    <h3 class="title text-center">Visualizar Todos los Zombies</h3>
+        <h3 class="title text-center">Visualizar Todos los Zombies</h3>
     <table>
     <tr class="topchart">
         <td><strong>Nombre</strong></td>
@@ -55,11 +55,14 @@
     <div>
     <div class="resultados">
     <h3 class="title text-center">Zombies Infectados</h3>
-    <table>
+  <table>
     <tr class="topchart">
-        <td><strong>Nombre</strong></td>
-        <td><strong>Estado</strong></td>
-        <td><strong>Fecha</strong></td>
+        <td><strong>Total</strong></td>
+        <td><strong>Infeccion</strong></td>
+        <td><strong>Desorientacion</strong></td>
+        <td><strong>Violencia</strong></td>
+        <td><strong>Desmayo</strong></td>
+        <td><strong>Transformacion</strong></td>
     </tr>
     
     <tr>
