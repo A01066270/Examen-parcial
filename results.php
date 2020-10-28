@@ -15,27 +15,27 @@
     <?php
           
         $conexion_bd = conectar();
-        $consulta = "SELECT * FROM actualiza"; 
+        $consulta1 = "SELECT * FROM actualiza"; 
 
-        $ejecutarConsulta = mysqli_query($conexion_bd, $consulta);
-        $verFilas = mysqli_num_rows($ejecutarConsulta);
-        $fila = mysqli_fetch_array($ejecutarConsulta);
-        if(!$ejecutarConsulta){
+        $ejecutarConsulta1 = mysqli_query($conexion_bd, $consulta1);
+        $verFilas1 = mysqli_num_rows($ejecutarConsulta1);
+        $fila1 = mysqli_fetch_array($ejecutarConsulta1);
+        if(!$ejecutarConsulta1){
             echo"Error en la consulta";
         }else{
-            if($verFilas<1){
+            if($verFilas1<1){
                 echo"<tr><td>Sin registros</td></tr>";
             }else{
-                for($i=0; $i<=$verFilas; $i++){
+                for($i=0; $i<=$verFilas1; $i++){
 				echo'
 				    <tr>
-				    <td>'.$fila[0].'</td>
-                    <td>'.$fila[1].'</td>
-                    <td>'.$fila[2].'</td>
+				    <td>'.$fila1[0].'</td>
+                    <td>'.$fila1[1].'</td>
+                    <td>'.$fila1[2].'</td>
 				    <a href="dashboard.php"><td></td></a>
 				    </tr>
 				';
-                    $fila = mysqli_fetch_array($ejecutarConsulta);
+                    $fila1 = mysqli_fetch_array($ejecutarConsulta1);
                 }
             }
         }
@@ -46,47 +46,6 @@
     </div>
     </div>
     <div class="grid-2">
-    <!-- <div class="resultados">
-    <h3 class="title text-center">Visualizar Zombies</h3>
-    <table>
-    <tr class="topchart">
-        <td><strong>Zombies</strong></td>
-        <td><strong>Estado</strong></td>
-    </tr>
-    <?php
-          
-        $conexion_bd = conectar();
-        $consulta = "SELECT * FROM actualiza"; 
-        $ejecutarConsulta = mysqli_query($conexion_bd, $consulta);
-        $verFilas = mysqli_num_rows($ejecutarConsulta);
-        $fila = mysqli_fetch_array($ejecutarConsulta);
-        if(!$ejecutarConsulta){
-            echo"Error en la consulta";
-        }else{
-            if($verFilas<1){
-                echo"<tr><td>Sin registros</td></tr>";
-            }else{
-                for($i=0; $i<=$verFilas; $i++){
-				echo'
-				    <tr>
-				    <td>'.$fila[0].'</td>
-                    <td>'.$fila[1].'</td>
-                    <td>'.$fila[2].'</td>
-				    <a href="dashboard.php"><td></td></a>
-				    </tr>
-				';
-                    $fila = mysqli_fetch_array($ejecutarConsulta);
-                }
-            }
-        }
-    ?>
-    <tr>
-        
-    </tr>
-    
-    </table>
-    </div>
-    <div> -->
     <div class="resultados">
     <h3 class="title text-center">Zombies Infectados</h3>
   <table>
@@ -101,33 +60,34 @@
     
     <tr>
 
-    <?php
+    <!-- <?php
           
           $conexion_bd = conectar();
-          $consulta = "SELECT * FROM actualiza"; 
-          $ejecutarConsulta = mysqli_query($conexion_bd, $consulta);
-          $verFilas = mysqli_num_rows($ejecutarConsulta);
-          $fila = mysqli_fetch_array($ejecutarConsulta);
-          if(!$ejecutarConsulta){
+          $consulta2 = "CALL `grandmaster`();";
+          var_dump($ejecutarConsulta2);
+          $ejecutarConsulta2 = mysqli_query($conexion_bd, $consulta2);
+          $verFilas2 = mysqli_num_rows($ejecutarConsulta2);
+          $fila2 = mysqli_fetch_array($ejecutarConsulta2);
+          if(!$ejecutarConsulta2){
               echo"Error en la consulta";
           }else{
-              if($verFilas<1){
+              if($verFilas2<1){
                   echo"<tr><td>Sin registros</td></tr>";
               }else{
-                  for($i=0; $i<=$verFilas; $i++){
+                  for($i=0; $i<=$verFilas2; $i++){
                   echo'
                       <tr>
-                      <td>'.$fila[0].'</td>
-                      <td>'.$fila[1].'</td>
-                      <td>'.$fila[2].'</td>
+                      <td>'.$fila2[0].'</td>
+                      <td>'.$fila2[1].'</td>
+                      <td>'.$fila2[2].'</td>
                       <a href="dashboard.php"><td></td></a>
                       </tr>
                   ';
-                      $fila = mysqli_fetch_array($ejecutarConsulta);
+                      $fila2 = mysqli_fetch_array($ejecutarConsulta);
                   }
               }
           }
-      ?>
+      ?> -->
         <td>Total</td>
         <td>Infeccion</td>
         <td>Desorientacion</td>
@@ -138,9 +98,9 @@
     
     </table>
     </div>    
-    </div>
-    </div>
-</section>
+    
+  
+
 
   
     

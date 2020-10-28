@@ -45,7 +45,7 @@ table{
 
 .resultados table {
     width: 100%;
-    padding 15px;
+    padding: 15px;
     border-bottom: 1px solid #ddd;
     
 }
@@ -86,7 +86,7 @@ a {
     font-size: 20px;
 }
 
-submit:hover{
+.submit:hover{
     font-size: 2rem;
 }
 

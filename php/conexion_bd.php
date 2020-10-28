@@ -48,7 +48,7 @@ function insertar_actualizacion($idZombie,$idEstado){
     //Deteccion de errores
     if (!$ejecutarInsertar){
         echo "Error en consulta sql.";
-        $insertarPaciente -> error;
+        $insertarRegistro -> error;
     }
     desconectar($conexion_bd);
     return $resultado;

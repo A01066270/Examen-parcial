@@ -1,11 +1,8 @@
-<!--Form-->
-<section class=" container registro">
-    <div class="grid-2">
-    <div class="formulario">
-        <form action="index.php" mothod="POST">
+
+    <form mothod="POST">
         <div class="card">
-            <label class="label">Nombre</label><br>
-            <input type="text" class="formulario1" name="nombre" placeholder="Nombre Apellido(s)">
+            <label class="label">Nombre*</label><br>
+            <input type="text" class="formulario1" name="nombre" placeholder="Nombre Apellido(s)" required>
             <br>
             <label class="label">Estado</label><br>
         <div class="custom-select" style="width:200px;" name="estado">
@@ -20,28 +17,20 @@
         </div>
             <br>
             <br><br>
-            <input type="submit" name="submit" value="Ingresar" >
-         </div>
-            <?
-             if(isset($_POST['submit'])){
-                 $nombre=$_POST["nombre"];
-                 $estado=$_POST("estado");
-                registro_bd($nombre, $estado);}
-                                        
-            ?>
+            <input type="submit" name="submit" value="Registrar" >
     </form> 
 
     <?php
-    if(isset($_POST['submit'])){
+    if(isset($_POST["submit"])){
         $conexion_bd = conectar();
         $id = rand(20000,29999);
         $nombre = $_POST["nombre"];
+        echo($nombre);
 
         
-        $insertarPaciente = "INSERT INTO `Zombie` (`idZombie`, `Nombre`) VALUES ('".$id."', '".$nombre."');
-        ";
+        $insertarPaciente = "INSERT INTO `Zombie` (`idZombie`, `Nombre`) VALUES ('".$id."', '".$nombre."')";
         
-        var_dump($insertarPaciente);
+        var_dump($ejecutarInsertar);
         $ejecutarInsertar = mysqli_query($conexion_bd,$insertarPaciente);
         
         
