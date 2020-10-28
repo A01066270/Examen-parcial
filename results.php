@@ -15,7 +15,7 @@
     <?php
           
         $conexion_bd = conectar();
-        $consulta1 = "SELECT * FROM actualiza"; 
+        $consulta1 = "SELECT z.Nombre, e.Nombre, a.`created-at` FROM actualiza a, Zombie z, Estado e WHERE e.idEstado = a.idEstado AND z.idZombie = a.idZombie"; 
 
         $ejecutarConsulta1 = mysqli_query($conexion_bd, $consulta1);
         $verFilas1 = mysqli_num_rows($ejecutarConsulta1);
@@ -48,28 +48,19 @@
     <div class="grid-2">
     <div class="resultados">
     <h3 class="title text-center">Zombies Infectados</h3>
-  <table>
-    <tr class="topchart">
-        <td><strong>Total</strong></td>
-        <td><strong>Infeccion</strong></td>
-        <td><strong>Desorientacion</strong></td>
-        <td><strong>Violencia</strong></td>
-        <td><strong>Desmayo</strong></td>
-        <td><strong>Transformacion</strong></td>
-    </tr>
-    
-    <tr>
+ 
 
-    <!-- <?php
+    <?php
           
           $conexion_bd = conectar();
-          $consulta2 = "CALL `grandmaster`();";
+          $consulta2 = "SELECT Estado.Nombre, count(*) from actualiza join Estado on Estado.idEstado=actualiza.idEstado group by Estado.idEstado";
           var_dump($ejecutarConsulta2);
           $ejecutarConsulta2 = mysqli_query($conexion_bd, $consulta2);
           $verFilas2 = mysqli_num_rows($ejecutarConsulta2);
           $fila2 = mysqli_fetch_array($ejecutarConsulta2);
+          echo($fila2);
           if(!$ejecutarConsulta2){
-              echo"Error en la consulta";
+              echo("Error en la consulta");
           }else{
               if($verFilas2<1){
                   echo"<tr><td>Sin registros</td></tr>";
@@ -79,15 +70,24 @@
                       <tr>
                       <td>'.$fila2[0].'</td>
                       <td>'.$fila2[1].'</td>
-                      <td>'.$fila2[2].'</td>
-                      <a href="dashboard.php"><td></td></a>
                       </tr>
                   ';
                       $fila2 = mysqli_fetch_array($ejecutarConsulta);
                   }
               }
           }
-      ?> -->
+      ?>
+       <table>
+    <tr class="topchart">
+        <td><strong>Estado</strong></td>
+        <td><strong>Zombies</strong></td>
+        <td><strong>Desorientacion</strong></td>
+        <td><strong>Violencia</strong></td>
+        <td><strong>Desmayo</strong></td>
+        <td><strong>Transformacion</strong></td>
+    </tr>
+        
+    <tr>
         <td>Total</td>
         <td>Infeccion</td>
         <td>Desorientacion</td>
@@ -100,8 +100,3 @@
     </div>    
     
   
-
-
-  
-    
-    

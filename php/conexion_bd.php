@@ -2,9 +2,9 @@
 //Conectar a base de datos con host, usuario, contraseña y nombre de la base de datos
 function conectar() {
     $host="localhost";
-    $name="fer";
-    $pass="micontra";
-    $dbname="examen2";
+    $name="id15227712_fer";
+    $pass="%A4P%-*T%sJ0cEr1";
+    $dbname="id15227712_examen";
 
     $conexion_bd = mysqli_connect($host,$name,$pass,$dbname);
     if (!$conexion_bd){

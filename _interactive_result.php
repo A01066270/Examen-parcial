@@ -1,4 +1,4 @@
- <div class="resultados">
+<div class="resultados">
     <h3 class="title text-center">Visualizar Zombies</h3>
     <table>
     <tr class="topchart">
@@ -8,7 +8,7 @@
     <?php
           
         $conexion_bd = conectar();
-        $consulta = "SELECT * FROM actualiza"; 
+        $consulta = "SELECT z.Nombre, e.Nombre, a.`created-at` FROM actualiza a, Zombie z, Estado e WHERE e.idEstado = a.idEstado AND z.idZombie = a.idZombie"; 
         $ejecutarConsulta = mysqli_query($conexion_bd, $consulta);
         $verFilas = mysqli_num_rows($ejecutarConsulta);
         $fila = mysqli_fetch_array($ejecutarConsulta);
