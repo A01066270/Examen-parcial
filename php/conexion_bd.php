@@ -42,7 +42,7 @@ function insertar_zombie($nombre){
 
 function insertar_actualizacion($idZombie,$idEstado){
     $conexion_bd = conectar();
-    $consulta = "INSERT INTO actualiza (idZombie, idEstado) VALUES (".$idZombie.",".$idEstado.")";
+    $consulta = "INSERT INTO `actualiza` (`idZombie`, `idEstado`, `created-at`) VALUES ('".$iZombie."', '".$idEstado."', current_timestamp());";
     $ejecutarInsertar = mysqli_query($conexion_bd,$insertarRegistro);
         
     //Deteccion de errores
